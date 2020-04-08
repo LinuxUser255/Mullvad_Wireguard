@@ -1,5 +1,7 @@
 # wireguard-mullvad-made-easy
 
+git clone https://github.com/LinuxUser255/wireguard-mullvad-made-easy.git
+
 chmod 755 wireguadWmullvad.sh
 
 then

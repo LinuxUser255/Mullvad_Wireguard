@@ -11,7 +11,7 @@ apt update
 apt install wireguard
    
 wget --content-disposition https://mullvad.net/download/deb/latest
-sudo apt-get -y install gdebi-core && sudo gdebi MullvadVPN-2020.3_amd64.deb
+sudo apt-get -y install gdebi-core && sudo gdebi MullvadVPN-2020.4_amd64.deb
 
 # Install WireGuard Network interface device
 ip link add dev wg0 type wireguard

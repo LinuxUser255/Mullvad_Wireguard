@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install Mullvad with WireGuard on Debian 10 LINUX
-# 1st need to install the Debian dependency pkgs for WireGuard 
+# First install the Debian dependency pkgs for WireGuard 
  git clone https://salsa.debian.org/debian/wireguard-linux-compat.git
 
 # https://wiki.debian.org/Wireguard

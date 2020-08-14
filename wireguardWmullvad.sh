@@ -15,6 +15,7 @@ sudo apt-get -y install gdebi-core && sudo gdebi MullvadVPN-2020.5_amd64.deb
 
 # Install WireGuard Network interface device
 ip link add dev wg0 type wireguard
+echo "Example: 192.168.2.1/24"
 echo "assingn an IP including the range for wg0 : "
 read  IP
 ip address add dev wg0 $IP

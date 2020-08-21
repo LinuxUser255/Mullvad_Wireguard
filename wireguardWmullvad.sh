@@ -10,7 +10,7 @@ printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' | sudo tee /etc
 apt update
 apt install wireguard
    
-wget --content-disposition https://mullvad.net/download/deb/latest
+wget https://mullvad.net/media/app/MullvadVPN-2020.5_amd64.deb
 sudo apt-get -y install gdebi-core && sudo gdebi MullvadVPN-2020.5_amd64.deb
 
 # Install WireGuard Network interface device

@@ -9,7 +9,8 @@ echo "deb http://deb.debian.org/debian/ unstable main" | sudo tee /etc/apt/sourc
 printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' | sudo tee /etc/apt/preferences.d/limit-unstable
 apt update
 apt install wireguard
-   
+
+# Download & install Mullvad. This wget cmd works. Not the /deb/latest
 wget https://mullvad.net/media/app/MullvadVPN-2020.5_amd64.deb
 sudo apt-get -y install gdebi-core && sudo gdebi MullvadVPN-2020.5_amd64.deb
 
@@ -21,7 +22,7 @@ echo "assingn an IP including the range for wg0 : "
 read  IP
 ip address add dev wg0 $IP
 
+#Start Mullvad
 mullvad
 
-
-# Then, set wireguard as preferred tunnel protocol.
+# And set wireguard as preferred tunnel protocol.

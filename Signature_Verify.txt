@@ -1,0 +1,106 @@
+
+
+1. Download the signing key.
+The fingerprint of our code signing key is A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF and can be downloaded either from a key server or directly from our website:
+
+Keyserver:
+
+gpg --keyserver pool.sks-keyservers.net --recv-keys A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF
+
+Website:
+
+wget https://mullvad.net/media/mullvad-code-signing.asc
+gpg --import mullvad-code-signing.asc
+
+
+2. Trust the signing key
+gpg --edit-key A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF
+
+You should get the following output.
+
+gpg (GnuPG) 2.1.13; Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+pub  rsa4096/D5A1D4F266DE8DDF
+     created: 2016-10-27  expires: never       usage: SC 
+     trust: unknown       validity: unknown
+sub  rsa4096/C187D22C089EF64E
+     created: 2016-10-27  expires: never       usage: E  
+sub  rsa4096/A26581F219C8314C
+     created: 2016-10-27  expires: never       usage: S  
+[ unknown] (1). Mullvad (code signing) <admin@mullvad.net>
+
+3. Enter key trust configuration
+Run gpg> trust
+
+You should get the output:
+
+pub  rsa4096/D5A1D4F266DE8DDF
+     created: 2016-10-27  expires: never       usage: SC
+     trust: unknown       validity: unknown
+sub  rsa4096/C187D22C089EF64E
+     created: 2016-10-27  expires: never       usage: E 
+sub  rsa4096/A26581F219C8314C
+     created: 2016-10-27  expires: never       usage: S 
+[ unknown] (1). Mullvad (code signing) <admin@mullvad.net>
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+  
+  
+ 4. Set trust level
+Enter '5' and then 'yes'.
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+You should get the following output.
+
+pub  rsa4096/D5A1D4F266DE8DDF      created: 2016-10-27  expires: never       usage: SC
+     trust: ultimate      validity: unknown
+sub  rsa4096/C187D22C089EF64E
+     created: 2016-10-27  expires: never       usage: E 
+sub  rsa4096/A26581F219C8314C
+     created: 2016-10-27  expires: never       usage: S 
+[ unknown] (1). Mullvad (code signing) <admin@mullvad.net>
+Please note that the shown key validity is not necessarily correct
+unless you restart the program.
+Quit
+Run gpg> q
+
+
+5. Verify the Mullvad VPN app
+# To download is first: wget --trust-server-names https://mullvad.net/download/app/deb/latest
+
+#Verify
+wget --trust-server-names https://mullvad.net/download/app/deb/latest/signature
+
+6. Manual Verification
+gpg --verify MullvadVPN-*.asc
+  
+ You should get the following output.
+
+gpg: assuming signed data in 'MullvadVPN-2019.4_x86_64.rpm'
+gpg: Signature made Tue Jun 11 22:14:58 2019 CEST
+gpg:                using RSA key CA83A46153BC58D69518ED49A26581F219C8314C
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: Good signature from "Mullvad (code signing) <admin@mullvad.net>" [ultimate]
+The important part above is that the output starts with
+
+assuming signed data in '{Filename of installer you want to verify}'
+
+and ends with
+
+Good signature from "Mullvad (code signing) <admin@mullvad.net>".
+--------------------------------------------------------------------
+
+https://mullvad.net/en/help/verifying-signatures/

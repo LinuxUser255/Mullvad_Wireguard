@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Install Mullvad with WireGuard on Debian 10 LINUX
 # First install the Debian dependency pkgs for WireGuard 
  git clone https://salsa.debian.org/debian/wireguard-linux-compat.git
 
@@ -11,10 +10,8 @@ apt install wireguard
 
 # Download & install Mullvad. This wget cmd works. 
 wget --trust-server-names https://mullvad.net/download/app/deb/latest
-sudo apt-get -y install gdebi-core && sudo gdebi MullvadVPN-2022.2_amd64.deb
 
 # Install WireGuard Network interface device
-# https://www.wireguard.com/quickstart/
 ip link add dev wg0 type wireguard
 echo "Example: ***** 192.168.2.1/24 *****"
 echo "assingn an IP including the range for wg0 : "

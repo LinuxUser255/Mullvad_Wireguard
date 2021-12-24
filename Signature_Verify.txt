@@ -1,4 +1,8 @@
 
+A step-by-step mannual verification of authenticity.
+This is automated in the revised shell script.
+-----------------------------------------------------
+
 
 1. Download the signing key.
 The fingerprint of our code signing key is A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF and can be downloaded either from a key server or directly from our website:

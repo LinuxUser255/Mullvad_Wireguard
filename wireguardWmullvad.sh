@@ -1,25 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # First install the Debian dependency pkgs for WireGuard 
  git clone https://salsa.debian.org/debian/wireguard-linux-compat.git
 
-# https://wiki.debian.org/Wireguard
-echo "deb http://deb.debian.org/debian/ unstable main" | sudo tee /etc/apt/sources.list.d/unstable-wireguard.list
-printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' | sudo tee /etc/apt/preferences.d/limit-unstable
+# Install Wireguard
 apt install wireguard
 
+# Download the signing key
+wget https://mullvad.net/media/mullvad-code-signing.asc
+gpg --import mullvad-code-signing.asc
+
+# Follow the directions on screen
+echo '\n'
+echo 'Trust the signing key: Run gpg> trust'
+echo 'To open the GnuPG key edit prompt: '
+
+echo 'Run gpg> trust'
+echo ''Enter '5' and then 'yes'.
+echo 'Set trust level, Enter '5' and then 'yes''
+echo 'to quit press q'
+echo ' the gpg --edit-key option will now run.'\n' '
+gpg --edit-key A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF
+
+echo ''
 # Download & install Mullvad. This wget cmd works. 
 wget --trust-server-names https://mullvad.net/download/app/deb/latest
+wget --trust-server-names https://mullvad.net/download/app/deb/latest/signature
 
+# Verify the signature
+gpg --verify MullvadVPN-"${latest}".deb.asc
+
+# Optional. Uncomment commands below to use.
 # Install WireGuard Network interface device
-ip link add dev wg0 type wireguard
-echo "Example: ***** 192.168.2.1/24 *****"
-echo "assingn an IP including the range for wg0 : "
-read  IP
-ip address add dev wg0 $IP
+# ip link add dev wg0 type wireguard
+# echo "Example: ***** 192.168.2.1/24 *****"
+# echo "assingn an IP including the range for wg0 : "
+# read  IP
+# ip address add dev wg0 $IP
 
-#Start Mullvad
-mullvad
 
-#Set Wireguard as preferred tunnel protocol.
 

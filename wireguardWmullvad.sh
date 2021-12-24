@@ -4,26 +4,26 @@
  git clone https://salsa.debian.org/debian/wireguard-linux-compat.git
 
 # Install Wireguard
-apt install wireguard
+sudo apt install wireguard
 
 # Download the signing key
 wget https://mullvad.net/media/mullvad-code-signing.asc
 gpg --import mullvad-code-signing.asc
 
 # Follow the directions on screen
-echo '\n'
-echo 'Trust the signing key: Run gpg> trust'
-echo 'To open the GnuPG key edit prompt: '
+echo ""
+printf "Trust the signing key: Run gpg> trust\n\n"
+printf "To open the GnuPG key edit prompt:\n\n"
+printf "Run gpg> trust\n\n"
+printf "'Enter '5' and then 'yes'.\n\n"
+printf "Set trust level, Enter '5' and then 'yes'\n\n"
+printf "to quit press q\n\n"
+printf "the gpg --edit-key option will now run.\n\n"
 
-echo 'Run gpg> trust'
-echo ''Enter '5' and then 'yes'.
-echo 'Set trust level, Enter '5' and then 'yes''
-echo 'to quit press q'
-echo ' the gpg --edit-key option will now run.'\n' '
 gpg --edit-key A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF
+echo ""
 
-echo ''
-# Download & install Mullvad. This wget cmd works. 
+# Download & install Mullvad.  
 wget --trust-server-names https://mullvad.net/download/app/deb/latest
 wget --trust-server-names https://mullvad.net/download/app/deb/latest/signature
 

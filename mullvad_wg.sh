@@ -31,12 +31,8 @@ wget --trust-server-names https://mullvad.net/download/app/deb/latest/signature
 gpg --verify MullvadVPN-"${latest}".deb.asc
 
 # Optional. Uncomment commands below to use.
-# Install WireGuard Network interface device
-# ip link add dev wg0 type wireguard
-# echo "Example: ***** 192.168.2.1/24 *****"
-# echo "assingn an IP including the range for wg0 : "
-# read  IP
-# ip address add dev wg0 $IP
+# See notes.txt for additional info
+
 
 
 

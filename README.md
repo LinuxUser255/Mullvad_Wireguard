@@ -2,7 +2,7 @@
 <h1 style="color:white;font-size:40px;">Mullvad_Wireguard</h1> 
 
  <p>
-  <strong>Quick download and install</strong>
+  <strong>Quick download and install for Debian Linux</strong>
   </p>
 
 

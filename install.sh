@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# See notes.txt for additional info
 # First install the Debian dependency pkgs for WireGuard 
  git clone https://salsa.debian.org/debian/wireguard-linux-compat.git
 
@@ -29,10 +30,5 @@ wget --trust-server-names https://mullvad.net/download/app/deb/latest/signature
 
 # Verify the signature
 gpg --verify MullvadVPN-"${latest}".deb.asc
-
-# Optional. Uncomment commands below to use.
-# See notes.txt for additional info
-
-
 
 

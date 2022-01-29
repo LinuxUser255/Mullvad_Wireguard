@@ -2,7 +2,7 @@
 
 # This script allows the user to select any one out of 8 servers owned by Mullvad running WireGuard.
 # Suggestion: You can rename this file to something shorter, remove the .sh extension, and move it to /usr/bin for fast on the fly use.
-# Note that at the time of writing this script, se4 & se1-wireguard, in Sweeden, are both running a 40 Gbps connection: https://mullvad.net/en/servers/
+# Note that at the time of writing this script, se4 & se1-wireguard, in Sweeden, are both running a 40 Gbps: https://mullvad.net/en/servers/
 echo ""
 echo -e "Choose a relay server: \n1 = Denmark\n2 = Finland\n3 = France\n4 = Germany\n5 = Netherlands\n6 = Norway\n7 = Sweden\n8 = Switzerland\n9 = Quit" 
 read sel

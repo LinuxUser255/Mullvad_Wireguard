@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: GPL-2.0
-#
+
+# Mullvad VPN Wireguard script with killswitch implant.
+# Found at: https://gist.github.com/limeless/6eb428228025b86e16e90e90e5ca5156
 # Copyright (C) 2016-2018 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved. 
 # Killswitch : https://github.com/vpn-kill-switch/homebrew-killswitch
 die() {

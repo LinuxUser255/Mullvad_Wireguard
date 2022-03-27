@@ -31,7 +31,7 @@ wget --trust-server-names https://mullvad.net/download/app/deb/latest
 wget --trust-server-names https://mullvad.net/download/app/deb/latest/signature
 
 # Verify the signature
-gpg --verify MullvadVPN-"${latest}".deb.asc
+gpg --verify MullvadVPN-*.deb.asc
 
 printf "\e[1;35m ------------------------------------------------------------- \e[0m\n"
 echo -e  "\e[1;31m Proceed with package installation? (y/N). \e[0m\n"

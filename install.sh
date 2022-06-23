@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-
+# Mullvad_Wireguard instalation scripts
+# by Chris Bingham
+# License: GNU GPLv3
 # See notes.txt for additional info
 # First install the Debian dependency pkgs for WireGuard 
  git clone https://salsa.debian.org/debian/wireguard-linux-compat.git

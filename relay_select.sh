@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-
+# Mullvad_Wireguard instalation scripts
+# by Chris Bingham
+# License: GNU GPLv3
 # This script allows the user to select any one out of 8 servers owned by Mullvad running WireGuard.
 # Suggestion: You can rename this file to something shorter, remove the .sh extension, and move it to /usr/bin for fast on the fly use.
 # Note that at the time of writing this script, se4 & se1-wireguard, in Sweeden, are both running a 40 Gbps: https://mullvad.net/en/servers/
